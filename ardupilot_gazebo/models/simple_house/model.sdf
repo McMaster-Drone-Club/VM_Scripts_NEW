@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="simple_house">
+    <static>true</static>
+    <link name="house_link">
+      <!-- Main house body -->
+      <visual name="house_body">
+        <pose>0 0 1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>4 4 2</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+        </material>
+      </visual>
+      
+      <!-- RED ROOF -->
+      <visual name="red_roof">
+        <pose>0 0 2.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>4.2 4.2 0.2</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1.0 0.2 0.2 1</ambient>
+          <diffuse>1.0 0.2 0.2 1</diffuse>
+        </material>
+      </visual>
+      
+      <!-- ROOF ARUCO MARKER -->
+      <visual name="aruco_roof">
+        <pose>0 0 2.21 0 0 0</pose>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>0.5 0.5</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Aruco72</name>
+          </script>
+        </material>
+      </visual>
+      
+      <!-- WALL ARUCO MARKER - FIXED -->
+      <visual name="aruco_wall">
+        <!-- Positioned on the front wall (+X direction) -->
+        <!-- X=2.01 places it just outside the wall (wall extends from -2 to +2, so half-width is 2)
+             Y=0 centers it horizontally
+             Z=1.2 places it at a good viewing height
+             Rotation: 0 0 1.5708 0 makes the plane face outward (90° rotation around Y-axis) -->
+        <pose>2.01 0 1.2 0 1.5708 0</pose>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>0.5 0.5</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Aruco72</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
