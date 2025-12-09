@@ -1,0 +1,357 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="default">
+    <wind>
+      <linear_velocity>11 11 0</linear_velocity>
+    </wind>
+    <scene>
+      <shadows>0</shadows>
+    </scene>
+    <gui>
+      <camera name="user_camera">
+        <pose>-5 0 1 0 0.2 0</pose>
+      </camera>
+    </gui>
+    <physics type="ode">
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>100</iters>
+          <sor>1.0</sor>
+        </solver>
+        <constraints>
+          <cfm>0.0</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>0.1</contact_max_correcting_vel>
+          <contact_surface_layer>0.0</contact_surface_layer>
+        </constraints>
+      </ode>
+      <real_time_update_rate>-1</real_time_update_rate>
+    </physics>
+    <gravity>0 0 -9.8</gravity>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>5000 5000</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+
+        <visual name="background">
+          <pose>0 0 -0.1 0 0 0</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>50 50</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grass</name>
+            </script>
+          </material>
+        </visual>
+
+        <!-- Optional ground ArUco -->
+        <visual name="qrcode1">
+          <pose>0 0 0.005 0 0 0</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.2 0.2</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo2.material</uri>
+              <name>Gazebo/Aruco72</name>
+            </script>
+          </material>
+        </visual>
+
+      </link>
+    </model>
+
+    <!-- HOUSE MODEL -->
+    <model name="house">
+      <pose>10 10 0 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <!-- WALLS -->
+        <collision name="wall_north">
+          <pose>0 3 1 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>6 0.2 2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="wall_north">
+          <pose>0 3 1 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>6 0.2 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+
+        <collision name="wall_south">
+          <pose>0 -3 1 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>6 0.2 2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="wall_south">
+          <pose>0 -3 1 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>6 0.2 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+
+        <collision name="wall_east">
+          <pose>3 0 1 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.2 6 2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="wall_east">
+          <pose>3 0 1 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.2 6 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+
+        <collision name="wall_west">
+          <pose>-3 0 1 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.2 6 2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="wall_west">
+          <pose>-3 0 1 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.2 6 2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+
+        <!-- ROOF -->
+        <collision name="roof">
+          <pose>0 0 2.2 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>6.2 6.2 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="roof">
+          <pose>0 0 2.2 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>6.2 6.2 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Blue</name>
+            </script>
+          </material>
+        </visual>
+
+        <!-- RANDOM ROOF ARUCO MARKERS -->
+        <visual name="aruco_roof_35_1">
+          <pose>1.901 -2.130 2.310 0 0 0</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.4 0.4</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo2.material</uri>
+              <name>Gazebo/Aruco35</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="aruco_roof_72_2">
+          <pose>-0.856 1.350 2.310 0 0 0</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.4 0.4</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo2.material</uri>
+              <name>Gazebo/Aruco72</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="aruco_roof_35_3">
+          <pose>-0.012 0.958 2.310 0 0 0</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.4 0.4</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo2.material</uri>
+              <name>Gazebo/Aruco35</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="aruco_roof_162_4">
+          <pose>-1.399 1.107 2.310 0 0 0</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.4 0.4</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo2.material</uri>
+              <name>Gazebo/Aruco162</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="aruco_roof_72_5">
+          <pose>1.412 -1.856 2.310 0 0 0</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.4 0.4</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo2.material</uri>
+              <name>Gazebo/Aruco72</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="aruco_roof_226_6">
+          <pose>-0.492 0.811 2.310 0 0 0</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.4 0.4</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo2.material</uri>
+              <name>Gazebo/Aruco226</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="aruco_roof_138_7">
+          <pose>1.750 0.756 2.310 0 0 0</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.4 0.4</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo2.material</uri>
+              <name>Gazebo/Aruco138</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="aruco_roof_35_8">
+          <pose>0.021 2.702 2.310 0 0 0</pose>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>0.4 0.4</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo2.material</uri>
+              <name>Gazebo/Aruco35</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="iris_demo_test">
+      <enable_wind>true</enable_wind>
+      <include>
+        <uri>model://iris_with_ardupilot</uri>
+      </include>
+    </model>
+
+  </world>
+</sdf>

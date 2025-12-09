@@ -3,10 +3,7 @@
 
   <world name="default">
 
-    <!-- Wind settings -->
-    <wind>
-      <linear_velocity>11 11 0</linear_velocity>
-    </wind>
+    <!-- Wind settings 
 
     <!-- Shadows off for performance -->
     <scene>
@@ -25,8 +22,8 @@
       <ode>
         <solver>
           <type>quick</type>
-          <iters>100</iters>
-          <sor>1.0</sor>
+          <iters>50</iters>
+          <sor>0.8</sor>
         </solver>
         <constraints>
           <cfm>0.0</cfm>
@@ -35,16 +32,13 @@
           <contact_surface_layer>0.0</contact_surface_layer>
         </constraints>
       </ode>
-      <real_time_update_rate>-1</real_time_update_rate>
+   	<max_step_size>0.004</max_step_size>
+  	<real_time_update_rate>200</real_time_update_rate>     
     </physics>
 
     <gravity>0 0 -9.8</gravity>
 
-    <!-- Sun -->
-    <include>
-      <uri>model://sun</uri>
-    </include>
-
+    <!-- Sun -
     <!-- Ground plane -->
     <model name="ground_plane">
       <static>true</static>
@@ -58,39 +52,18 @@
           </geometry>
         </collision>
 
-        <!-- Grass texture -->
-        <visual name="ground_visual">
-          <pose>0 0 -0.1 0 0 0</pose>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>50 50</size>
-            </plane>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grass</name>
-            </script>
-          </material>
-        </visual>
-
+            
         <!-- ArUco marker -->
         <visual name="qrcode1">
           <pose>0 0 0.005 0 0 0</pose>
           <geometry>
             <plane>
               <normal>0 0 1</normal>
-              <size>0.2 0.2</size>
+              <size>0.4 0.4</size>
             </plane>
           </geometry>
 
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo2.material</uri>
-              <name>Gazebo/Aruco72</name>
-            </script>
-          </material>
+         
         </visual>
 
       </link>
@@ -100,7 +73,7 @@
     <include>
       <name>simple_house</name>
       <uri>model://simple_house</uri>
-      <pose>5 5 0 0 0 0</pose>
+      <pose>3 3 0 0 0 0</pose>
     </include>
 
     <!-- Drone model -->

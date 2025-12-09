@@ -60,3 +60,5 @@ tmp/
 # More
 #############################################
 .history
+gazebo_models/
+catkin_ws/src/gazebo_drone/scripts/Miniconda3-latest-Linux-x86_64.sh
