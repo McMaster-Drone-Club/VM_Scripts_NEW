@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="simple_fire">
+    <static>true</static>
+
+    <link name="fire_link">
+
+      <!-- YELLOW INNER FLAME -->
+      <visual name="flame_yellow">
+        <geometry>
+          <cylinder>
+            <radius>0.15</radius>
+            <length>0.6</length>
+          </cylinder>
+        </geometry>
+        <pose>0 0 0 0 0 0</pose>
+        <material>
+          <ambient>1 1 0 1</ambient>
+          <diffuse>1 1 0 1</diffuse>
+          <emissive>1 0.8 0 1</emissive>
+        </material>
+      </visual>
+
+      <visual name="flame_yellow_top">
+        <geometry>
+          <sphere>
+            <radius>0.15</radius>
+          </sphere>
+        </geometry>
+        <pose>0 0 0.3 0 0 0</pose>
+        <material>
+          <ambient>1 1 0 1</ambient>
+          <diffuse>1 1 0 1</diffuse>
+          <emissive>1 0.8 0 1</emissive>
+        </material>
+      </visual>
+
+      <!-- ORANGE MID FLAME -->
+      <visual name="flame_orange">
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>0.9</length>
+          </cylinder>
+        </geometry>
+        <pose>0 0 -0.05 0 0 0</pose>
+        <material>
+          <ambient>1 0.5 0 1</ambient>
+          <diffuse>1 0.5 0 1</diffuse>
+          <emissive>1 0.3 0 1</emissive>
+        </material>
+      </visual>
+
+      <visual name="flame_orange_top">
+        <geometry>
+          <sphere>
+            <radius>0.25</radius>
+          </sphere>
+        </geometry>
+        <pose>0 0 0.35 0 0 0</pose>
+        <material>
+          <ambient>1 0.5 0 1</ambient>
+          <diffuse>1 0.5 0 1</diffuse>
+          <emissive>1 0.3 0 1</emissive>
+        </material>
+      </visual>
+
+      <!-- RED OUTER FLAME -->
+      <visual name="flame_red">
+        <geometry>
+          <cylinder>
+            <radius>0.35</radius>
+            <length>1.2</length>
+          </cylinder>
+        </geometry>
+        <pose>0 0 -0.1 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <emissive>1 0.1 0.1 1</emissive>
+        </material>
+      </visual>
+
+      <visual name="flame_red_top">
+        <geometry>
+          <sphere>
+            <radius>0.35</radius>
+          </sphere>
+        </geometry>
+        <pose>0 0 0.5 0 0 0</pose>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <emissive>1 0.1 0.1 1</emissive>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>
+

@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="simple_person">
+    <static>true</static>
+
+    <link name="person_link">
+
+      <!-- HEAD (green sphere) -->
+      <visual name="head">
+        <geometry>
+          <sphere>
+            <radius>0.15</radius>
+          </sphere>
+        </geometry>
+        <pose>0 0 1.55 0 0 0</pose>
+        <material>
+          <ambient>0 1 0 1</ambient>
+          <diffuse>0 1 0 1</diffuse>
+          <emissive>0 0.8 0 1</emissive>
+        </material>
+      </visual>
+
+      <!-- TORSO (gray cylinder) -->
+      <visual name="torso">
+        <geometry>
+          <cylinder>
+            <radius>0.20</radius>
+            <length>0.60</length>
+          </cylinder>
+        </geometry>
+        <pose>0 0 1.15 0 0 0</pose>
+        <material>
+          <ambient>0.7 0.7 0.7 1</ambient>
+          <diffuse>0.7 0.7 0.7 1</diffuse>
+        </material>
+      </visual>
+
+      <!-- LEFT ARM -->
+      <visual name="arm_left">
+        <geometry>
+          <cylinder>
+            <radius>0.07</radius>
+            <length>0.50</length>
+          </cylinder>
+        </geometry>
+        <pose>-0.30 0 1.20 0 0 1.57</pose>
+        <material>
+          <ambient>0.7 0.7 0.7 1</ambient>
+          <diffuse>0.7 0.7 0.7 1</diffuse>
+        </material>
+      </visual>
+
+      <!-- RIGHT ARM -->
+      <visual name="arm_right">
+        <geometry>
+          <cylinder>
+            <radius>0.07</radius>
+            <length>0.50</length>
+          </cylinder>
+        </geometry>
+        <pose>0.30 0 1.20 0 0 1.57</pose>
+        <material>
+          <ambient>0.7 0.7 0.7 1</ambient>
+          <diffuse>0.7 0.7 0.7 1</diffuse>
+        </material>
+      </visual>
+
+      <!-- LEGS (black cylinders) -->
+      <visual name="left_leg">
+        <geometry>
+          <cylinder>
+            <radius>0.10</radius>
+            <length>0.70</length>
+          </cylinder>
+        </geometry>
+        <pose>-0.12 0 0.55 0 0 0</pose>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+        </material>
+      </visual>
+
+      <visual name="right_leg">
+        <geometry>
+          <cylinder>
+            <radius>0.10</radius>
+            <length>0.70</length>
+          </cylinder>
+        </geometry>
+        <pose>0.12 0 0.55 0 0 0</pose>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>
+
