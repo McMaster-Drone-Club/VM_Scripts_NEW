@@ -215,8 +215,8 @@
         </visual>
 
         <!-- RANDOM ROOF ARUCO MARKERS -->
-        <visual name="aruco_roof_162_1">
-          <pose>0.981 2.231 2.310 0 0 0</pose>
+        <visual name="aruco_roof_129_1">
+          <pose>0.249 0.099 2.310 0 0 0</pose>
           <cast_shadows>false</cast_shadows>
           <geometry>
             <plane>
@@ -227,39 +227,7 @@
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo2.material</uri>
-              <name>Gazebo/Aruco162</name>
-            </script>
-          </material>
-        </visual>
-        <visual name="aruco_roof_201_2">
-          <pose>-2.487 2.413 2.310 0 0 0</pose>
-          <cast_shadows>false</cast_shadows>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>0.4 0.4</size>
-            </plane>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo2.material</uri>
-              <name>Gazebo/Aruco201</name>
-            </script>
-          </material>
-        </visual>
-        <visual name="aruco_roof_162_3">
-          <pose>0.104 -0.046 2.310 0 0 0</pose>
-          <cast_shadows>false</cast_shadows>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>0.4 0.4</size>
-            </plane>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo2.material</uri>
-              <name>Gazebo/Aruco162</name>
+              <name>Gazebo/Aruco129</name>
             </script>
           </material>
         </visual>
