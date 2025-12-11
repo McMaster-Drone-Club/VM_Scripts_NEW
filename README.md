@@ -156,14 +156,4 @@ See **CONTRIBUTING.md** for:
 
 ---
 
-# ✍️ Contributors
-(Add your name in your first PR.)
-
-```
-- Sachin Gupta — Autonomy / ML / DroneKit
-- <Your Name> — <Your Role>
-```
-
----
-
 # 🏁 End of README
